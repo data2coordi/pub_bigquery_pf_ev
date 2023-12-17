@@ -1,15 +1,5 @@
 
 select 
-    'pf seqid only', 
-	partid, 
-	clusterdid, 
-	seqid, 
-	CURRENT_TIMESTAMP() t 
-from 
-`ml_dataset.bigdata_for_ev`
-where seqid = 9500000; 
-
-select 
     'pf randum colum only', 
 	partid, 
 	clusterdid, 

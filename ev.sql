@@ -9,5 +9,5 @@ FROM
 WHERE
   query like '%pf%ml_dataset%'  and query not like '%INFORMATION_SCHEMA%'
 ORDER BY DATETIME(creation_time)  DESC
-LIMIT 2;
+LIMIT 1;
 
