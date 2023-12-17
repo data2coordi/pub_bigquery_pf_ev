@@ -1,6 +1,6 @@
 
-select 'pf fullscan', partid, clusterdid, num_col1, CURRENT_TIMESTAMP() t  from `ml_dataset.bigdata_for_ev` 
-where  num_col1=12091139 ; 
+select min(clusterdid),max(clusterdid),CURRENT_TIMESTAMP() t from `ml_dataset.bigdata_for_ev`
+where   partid = 10 ; 
 
 return;
 

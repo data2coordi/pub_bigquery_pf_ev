@@ -1,6 +1,5 @@
 
 bq query --use_legacy_sql=false <  pf.sql
-bq query --use_legacy_sql=false <  ev.sql
 
 exit 
 # Bigqueryの性能 基本検証
