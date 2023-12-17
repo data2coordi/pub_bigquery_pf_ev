@@ -1,26 +1,25 @@
 
-select min(clusterdid),max(clusterdid),CURRENT_TIMESTAMP() t from `ml_dataset.bigdata_for_ev`
-where   partid = 10 ; 
+select 'pf part+cluster min', partid, clusterdid, num_col1, CURRENT_TIMESTAMP() t from `ml_dataset.bigdata_for_ev`
+where partid = 10 and clusterdid=9500000 ; 
 
 return;
 
---Basic
+
+
+--Advanced
+------------------------
+-- cluster min vs max
+-- part 10 clusterdid min:9500000 max:10499999 
+select 'pf part+cluster min', partid, clusterdid, num_col1, CURRENT_TIMESTAMP() t from `ml_dataset.bigdata_for_ev`
+where partid = 10 and clusterdid=9500000 ; 
+
+select 'pf part+cluster max', partid, clusterdid, num_col1, CURRENT_TIMESTAMP() t from `ml_dataset.bigdata_for_ev`
+where partid = 10 and clusterdid=10499999 ; 
+
+
+
 ------------------------
 
-select 'pf fullscan', partid, clusterdid, num_col1, CURRENT_TIMESTAMP() t  from `ml_dataset.bigdata_for_ev` 
-where  num_col1=12091139 ; 
-
-
-select 'pf part', partid, clusterdid,CURRENT_TIMESTAMP() t  from `ml_dataset.bigdata_for_ev` 
-where  num_col1=12091139 and partid = 10 ; 
-
-
-select 'pf part+cluster', partid, clusterdid,CURRENT_TIMESTAMP() t from `ml_dataset.bigdata_for_ev`
-where  num_col1=12091139 and partid = 10 and clusterdid=9700146 ; 
-
-
-
-------------------------
 select 'pf3', partid, seqid, CURRENT_TIMESTAMP() from `ml_dataset.bigdata_for_ev`
 where seqid=1000000 and  partid = 10; 
 
@@ -41,3 +40,16 @@ where seqid=1000000 ;
 
 
 
+--Basic
+------------------------
+
+select 'pf fullscan', partid, clusterdid, num_col1, CURRENT_TIMESTAMP() t  from `ml_dataset.bigdata_for_ev` 
+where  num_col1=12091139 ; 
+
+
+select 'pf part', partid, clusterdid,CURRENT_TIMESTAMP() t  from `ml_dataset.bigdata_for_ev` 
+where  num_col1=12091139 and partid = 10 ; 
+
+
+select 'pf part+cluster', partid, clusterdid,CURRENT_TIMESTAMP() t from `ml_dataset.bigdata_for_ev`
+where  num_col1=12091139 and partid = 10 and clusterdid=9700146 ; 

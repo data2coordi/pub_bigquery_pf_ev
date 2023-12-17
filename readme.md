@@ -1,13 +1,20 @@
 
 bq query --use_legacy_sql=false <  pf.sql
+bq query --use_legacy_sql=false <  ev.sql
 
 exit 
+
+# 前提
+以下のリポジトリの方法で作成した1億件のテーブルで性能を検証する。
+
+[Bigqueryで大量データ生成](https://github.com/data2coordi/pub_bigquery_generate_data)
+
+
 # Bigqueryの性能 基本検証
 # 目的
 Bigqueryでテーブルを設計するなら知っておくべき基本的な機能を検証する。
 1. パーティションの効果を確認する。
 2. クラスタリングの効果を確認する。
-
 
 # 検証結果
 
@@ -16,13 +23,6 @@ Bigqueryでテーブルを設計するなら知っておくべき基本的な機
 
 2. クラスタリングの効果を確認する。
 
-# 検証プロセス
-
-bq query --use_legacy_sql=false <  pf.sql
-bq query --use_legacy_sql=false <  ev.sql
-
-## フルスキャン
-
 
 
 
@@ -30,8 +30,6 @@ bq query --use_legacy_sql=false <  ev.sql
 # Bigqueryの性能 高度＋実験
 # 目的
 
-Bigqueryの性能を検証することを目的として、検証環境を公開する。
-Bigqueryの性能検証をしたい人が本リポジトリを利用して簡単に検証を開始できれば幸いです。
 
 また、以下検証結果を公開する。
 検証結果から仕組みを理解し高度にパフォーマンスチューニングができることを目指す。
