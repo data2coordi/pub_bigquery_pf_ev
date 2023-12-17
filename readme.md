@@ -18,7 +18,7 @@ Bigqueryでテーブルを設計するなら知っておくべき基本的な機
 
 # 検証結果
 フルスキャンの場合
-
+```
 select 'pf fullscan', partid, clusterdid, num_col1, CURRENT_TIMESTAMP() t  from `ml_dataset.bigdata_for_ev` 
 where  num_col1=12091139; -- at [2:1]
 +-------------+--------+------------+----------+---------------------+
@@ -32,7 +32,7 @@ where  num_col1=12091139; -- at [2:1]
 | select 'pf fullscan', partid, clusterdid, num_col1, CURRENT_TIMESTAMP() t  from `ml_dataset.bigdata_for_ev`  |      2400077952 | 2288.8927001953125 | 2.235246777534485 | 0-0 0 0:0:0.444 | 2023-12-17 01:01:30 | 2023-12-17 01:01:30 |     false |    2289.0 |
 | where  num_col1=12091139                                                                                     |                 |                    |                   |                 |                     |                     |           |           |
 +--------------------------------------------------------------------------------------------------------------+-----------------+--------------------+-------------------+-----------------+---------------------+---------------------+-----------+-----------+
-
+```
 1. パーティションの効果を確認する。
 
 select 'pf part', partid, clusterdid,CURRENT_TIMESTAMP() t  from `ml_dataset.bigdata_for_ev` 
