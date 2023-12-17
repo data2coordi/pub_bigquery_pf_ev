@@ -1,14 +1,9 @@
 
 SELECT
   query,
-  total_bytes_processed AS processed_bytes,
   total_bytes_processed / 1024 / 1024  AS processed_MB,
   total_bytes_processed / 1024 / 1024 / 1024  * 1 AS Charges_yen,
-  end_time-start_time,
-  start_time,
-  end_time,
-  cache_hit,
-  total_bytes_billed / 1024 / 1024 AS billed_MB,
+  cache_hit
 FROM
 `region-us-central1`.INFORMATION_SCHEMA.JOBS_BY_PROJECT
 WHERE
