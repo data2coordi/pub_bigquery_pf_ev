@@ -1,17 +1,5 @@
 
-select 
-	'pf part+cluster', 
-	partid, 
-	clusterdid,
-	CURRENT_TIMESTAMP() t 
-from `ml_dataset.bigdata_for_ev`
-where num_col1=12091139 
-and   partid = 10
-and   clusterdid=9700146 ; 
 
-
-
-return;
 
 
 --Basic
