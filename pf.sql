@@ -1,20 +1,25 @@
 
 select 
-    'pf part+cluster max', 
+    'pf seqid only', 
 	partid, 
 	clusterdid, 
-	num_col1, 
+	seqid, 
 	CURRENT_TIMESTAMP() t 
 from 
 `ml_dataset.bigdata_for_ev`
-where partid = 10 
-and   clusterdid=10499999 ; 
+where seqid = 9500000; 
 
+select 
+    'pf randum colum only', 
+	partid, 
+	clusterdid, 
+	num_col1,
+	CURRENT_TIMESTAMP() t 
+from 
+`ml_dataset.bigdata_for_ev`
+where num_col1 = 18500113;
 
 return;
-
-
-
 --Advanced
 ------------------------
 -- cluster min vs max
@@ -55,6 +60,29 @@ where partid = 10
 and   clusterdid=10499999 ; 
 
 
+------------------------
+
+-- seq  vs randum
+-- seqid:9500000 num_col1:18500113
+select 
+    'pf seqid only', 
+	partid, 
+	clusterdid, 
+	seqid, 
+	CURRENT_TIMESTAMP() t 
+from 
+`ml_dataset.bigdata_for_ev`
+where seqid = 9500000; 
+
+select 
+    'pf randum colum only', 
+	partid, 
+	clusterdid, 
+	num_col1,
+	CURRENT_TIMESTAMP() t 
+from 
+`ml_dataset.bigdata_for_ev`
+where num_col1 = 18500113;
 
 ------------------------
 
